@@ -1,5 +1,5 @@
 var addNote=(title,body)=>{
-    console.log('addinh note',title,body)
+    console.log('adding note',title,body)
 };
 
 module.exports={
