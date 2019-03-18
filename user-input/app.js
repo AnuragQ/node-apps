@@ -18,16 +18,14 @@ if (command==='add'){
 
 } else 
 if (command==='list'){
-    console.log('listing');
+    notes.getAll();
     
 }else 
 if (command==='read'){
-    console.log('reading');
-    
+    notes.read(argv.title);    
 }else 
 if (command==='remove'){
-    console.log('removing');
-    
+    notes.remove(argv.title);
 }
 else{
     console.log('command not identified');
