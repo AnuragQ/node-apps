@@ -7,7 +7,7 @@ const argv =yargs.argv;
 console.log('process:',process.argv);
 console.log('yargs:',argv)
 
-var command =process.argv[2];
+var command =argv._[0];
 console.log('Command: ',command);
 
 
