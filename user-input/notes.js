@@ -35,11 +35,19 @@ var addNote=(title,body)=>{
 };
 
 var getAll=()=>{
-    console.log("getting all notes")
+
+    return fetchNotes();
 };
 
 var read=(title)=>{
-    console.log(`reading note: ${title}`)
+
+    notes=fetchNotes();
+    var duplicateNotes=notes.filter((note)=>note.title===title)
+    if(duplicateNotes.length!==0){
+        console.log(duplicateNotes[0])
+        return duplicateNotes[0]; 
+    }
+
 };
 
 var remove=(title)=>{
