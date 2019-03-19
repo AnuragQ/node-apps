@@ -14,8 +14,12 @@ console.log('Command: ',command);
 
 
 if (command==='add'){
-    notes.addNote(argv.title,argv.body);    
-
+    var note=notes.addNote(argv.title,argv.body);    
+    if(note!=undefined){
+        console.log(`the saved note is: Title: ${note.title} Body: ${note.body}`)
+    } else{
+        console.log('the note is invalid or duplicate');
+    }
 } else 
 if (command==='list'){
     notes.getAll();
@@ -25,7 +29,12 @@ if (command==='read'){
     notes.read(argv.title);    
 }else 
 if (command==='remove'){
-    notes.remove(argv.title);
+    var note=notes.remove(argv.title);
+    if(note){
+        console.log(`the removed note is: Title: ${argv.title} `)
+    } else{
+        console.log('the note is invalid or or does not exist');
+    }
 }
 else{
     console.log('command not identified');
